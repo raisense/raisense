@@ -111,7 +111,35 @@ h1 {
 }
 
 .main-color {
-	color: #109cf1;
+	font-weight: bold;
+	color: #fff;
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-left: 2px;
+}
+
+.navbar-brand {
+	margin-right: 5%;
+}
+
+.nav-link {
+	overflow: hidden;
+	position: relative;
+	margin: 0 11px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.navbar-nav .nav-link {
+	text-transform: uppercase;
+	font-size: 14px !important;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.navbar-nav:last-child .nav-link {
+	font-weight: normal;
+	letter-spacing: 1px;
 }
 
 .nav {
@@ -120,12 +148,29 @@ h1 {
 	padding-top: 24px;
 }
 
+.navbar-nav:first-child .nav-link:before {
+	position: absolute;
+	transition: .15s all ease;
+	content: " ";
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transform: translateX(100%);
+}
+
+.navbar-nav:first-child .nav-link:hover:before {
+	transition: .15s all ease-in-out;
+	transform: translateX(0);
+}
+
 .bg-dark {
 	background-color: transparent !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-	font-size: 1em !important;
+	font-size: 1em;
 	color: #fff;
 }
 
@@ -151,6 +196,15 @@ h1 {
 
 .project {
 	margin-bottom: 1rem;
+	transition: .2s all ease-in;
+}
+
+.project > a:hover {
+	color: #fff;
+}
+
+.project:hover {
+	transform: translateY(-8px);
 }
 
 .project-img {
@@ -187,9 +241,54 @@ h1 {
 	justify-content: center;
 }
 
+.navbar-toggler {
+	border: 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	color: #fff;
+}
+
 @media screen and (min-width: 1360px) {
 	.container {
-		max-width: 1300px !important;
+		max-width: 1200px !important;
+	}
+}
+
+@media screen and (max-width: 1360px) {
+	.navbar-nav .nav-link {
+		letter-spacing: 2px;
+		font-size: 13.5px !important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.navbar-nav .nav-link {
+		letter-spacing: 0 !important;
+		font-size: 12.5px !important;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.navbar-nav .nav-link {
+		font-size: 16px !important;
+	}
+
+	.navbar-nav:last-child .nav-link {
+		font-weight: 300;
+		text-transform: initial;
+	}
+
+	.nav-link:before {
+		content: none !important;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.navbar-nav {
+		text-align: center;
+		margin-top: 24px;
 	}
 }
 

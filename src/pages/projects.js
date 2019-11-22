@@ -55,17 +55,19 @@ export default class Projects extends React.Component {
 							return (
 								<Col xs={12} sm={6} md={4} lg={3}>
 									<div className="project">
-										<div className="project-img">
-											<img
-												src={project.data.image.localFile.childImageSharp.fluid.src}
-												srcset={project.data.image.localFile.childImageSharp.fluid.srcSet}
-												sizes={project.data.image.localFile.childImageSharp.fluid.sizes}
-											/>
-										</div>
-										<div className="project-info">
-											<div className="project-name">{project.data.name.text}</div>
-											<div className="project-desc">{project.data.description.text}</div>
-										</div>
+										<a href={project.data.link.url} target="_blank">
+											<div className="project-img">
+												<img
+													src={project.data.image.localFile.childImageSharp.fluid.src}
+													srcset={project.data.image.localFile.childImageSharp.fluid.srcSet}
+													sizes={project.data.image.localFile.childImageSharp.fluid.sizes}
+												/>
+											</div>
+											<div className="project-info">
+												<div className="project-name">{project.data.name.text}</div>
+												<div className="project-desc">{project.data.description.text}</div>
+											</div>
+										</a>
 									</div>
 								</Col>
 							);

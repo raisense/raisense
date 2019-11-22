@@ -8,6 +8,9 @@
 .footer {
 	padding: 46px 0;
 	border-top: 1px solid #222;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
 }
 .footer-list ul,
 .contacts {
@@ -28,9 +31,11 @@
 	align-items: flex-start;
 }
 .footer-header {
-	font-size: 24px;
+	font-size: 18px;
 	margin-bottom: 24px;
 	font-weight: bold;
+	padding-bottom: 2px;
+	text-transform: uppercase;
 	border-bottom: 2px solid #fff;
 	width: max-content;
 }

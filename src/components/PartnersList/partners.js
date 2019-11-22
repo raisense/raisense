@@ -11,9 +11,12 @@ export default class Partners extends Component {
 		console.log(this.state.partners);
 		const params = {
 			spaceBetween: 30,
+			preventClicks: false,
+			preventClicksPropagation: false,
 			autoplay: {
-				delay: 3000
+				delay: 2000
 			},
+			loop: true,
 			breakpoints: {
 				0: {
 					slidesPerView: 1
@@ -35,7 +38,15 @@ export default class Partners extends Component {
 						{this.state.partners.map((partner, index) => {
 							return (
 								<div key={index}>
-									<img src={partner.data.image.url} />
+									{partner.data.link ? (
+										<a href={partner.data.link.url}>
+											<img src={partner.data.image.url} />
+										</a>
+									) : (
+										<a href="#">
+											<img src={partner.data.image.url} />
+										</a>
+									)}
 								</div>
 							);
 						})}
