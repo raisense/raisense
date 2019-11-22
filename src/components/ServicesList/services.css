@@ -1,0 +1,36 @@
+.services {
+	margin: 64px 0;
+}
+
+.service {
+	margin-bottom: 48px;
+}
+
+.service-name {
+	margin: 18px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	height: 45px;
+}
+.service-desc {
+	color: #bdbdbd;
+	font-size: 14px;
+}
+
+.service-img img {
+	height: 70px;
+}
+
+@media screen and (min-width: 1360px) {
+	.service-name {
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.service-name {
+		height: auto;
+		margin-bottom: 14px;
+	}
+}

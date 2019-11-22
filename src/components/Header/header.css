@@ -1,0 +1,47 @@
+.top-nav {
+	padding-top: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.top-nav-list {
+	list-style: none;
+	font-size: 14px;
+}
+.top-nav-list > li:first-child {
+	margin-left: 0;
+}
+
+.top-nav-list > li {
+	display: inline;
+	margin-left: 20px;
+}
+
+.logo {
+	width: 200px;
+}
+
+.icon {
+	vertical-align: -0.4em;
+	margin-right: 10px;
+}
+
+.social-item {
+	margin-right: 36px;
+}
+
+.social-item img {
+	width: 16px;
+}
+
+.fb {
+	width: 10px !important;
+}
+
+.slogan {
+	text-align: center;
+	margin: 24px 0;
+	font-size: 18px;
+	color: #555;
+}
