@@ -19,6 +19,8 @@ jobs:
       - run: npm install
       - run: | 
           git config --global github.user bedilbek
+          git config --global github.name "Bedilbek"
+          git config --global github.email "bedilbek@gmail.com"
           git config --global github.token ${{ secrets.GH_PAT }}
       - run: npm run deploy
         env: 
