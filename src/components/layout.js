@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Container from 'react-bootstrap/Container';
 import Menu from './MainNavbar/menu';
 import Footer from './Footer/footer';
+import Particles from "react-particles-js"
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -26,6 +27,51 @@ const Layout = ({ children }) => {
 
 	return (
 		<div id="app">
+			<div className="particles">
+				<Particles
+				params={{
+					"particles": {
+						"number": {
+							"value": 120,
+							"density": {
+								"enable": true,
+								"value_area": 3000
+							}
+						},
+						"line_linked": {
+							"enable": false,
+						},
+						"move": {
+							"direction": "right",
+							"speed": 0.5
+						},
+						"size": {
+							"value": 2
+						},
+						"opacity": {
+							"anim": {
+								"enable": true,
+								"speed": 1,
+								"opacity_min": 0.05
+							}
+						}
+					},
+					"interactivity": {
+						"events": {
+							"onclick": {
+								"enable": true,
+								"mode": "push"
+							}
+						},
+						"modes": {
+							"push": {
+								"particles_nb": 1
+							}
+						}
+					},
+					"retina_detect": true
+				}} />
+			</div>
 			<Menu />
 			<div>
 				<Container>

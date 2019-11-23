@@ -14,7 +14,7 @@ export default class ServicesList extends Component {
 					<h1>Services</h1>
 					<Row>
 						{this.state.servicesList.map((service, index) => {
-							console.log(service);
+							
 							return (
 								<Col xs={12} sm={6} md={4} md={3} key={index}>
 									<div className="service">

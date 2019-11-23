@@ -16,6 +16,9 @@ export default class Slider extends Component {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev'
 			},
+			pagination: {
+				el: '.swiper-pagination'
+			},
 			breakpoints: {}
 		};
 		return (

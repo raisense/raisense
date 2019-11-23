@@ -5,8 +5,8 @@ require('dotenv').config({
 module.exports = {
 	siteMetadata: {
 		title: `Raisense`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		description: `We deliver IT-products that actually RAISE you up and optimize business processes up to the point that makes SENSE.`,
+		author: `Azizbek Jonibekov`
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -37,7 +37,18 @@ module.exports = {
 				repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
 				accessToken: process.env.PRISMIC_ACCESS_TOKEN
 			}
-		}
+		},
+		{
+			resolve: `gatsby-plugin-gtag`,
+			options: {
+			  // your google analytics tracking id
+			  trackingId: `UA-149915066-1`,
+			  // Puts tracking script in the head instead of the body
+			  head: false,
+			  // enable ip anonymization
+			  anonymize: true,
+			}
+			}
 		// {
 		// 	resolve: 'gatsby-plugin-zopfli',
 		// 	options: {

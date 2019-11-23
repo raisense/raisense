@@ -41,7 +41,11 @@ export default function Footer() {
 							<ul className="contacts">
 								<li>
 									<img src={phone} className="icon" />
-									<span>+99890 999 69 96</span>
+									<span>
+										<a href="tel:+99890 999 69 96">
+										+99890 999 69 96
+										</a>
+										</span>
 								</li>
 								<li>
 									<img src={location} className="icon" />
@@ -49,7 +53,10 @@ export default function Footer() {
 								</li>
 								<li>
 									<img src={email} className="icon" />
-									<span>info@raisense.uz</span>
+									<span>
+									<a href="mailto:info@raisense.uz">
+										info@raisense.uz
+									</a></span>
 								</li>
 							</ul>
 						</div>

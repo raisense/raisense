@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import './partners.css';
 
+import {OutboundLink} from "gatsby-plugin-gtag"
+
 export default class Partners extends Component {
 	state = {
 		partners: this.props.data
 	};
 
 	render() {
-		console.log(this.state.partners);
 		const params = {
 			spaceBetween: 30,
 			preventClicks: false,
 			preventClicksPropagation: false,
 			autoplay: {
-				delay: 2000
+				delay: 20000
 			},
 			loop: true,
 			breakpoints: {
@@ -39,9 +40,9 @@ export default class Partners extends Component {
 							return (
 								<div key={index}>
 									{partner.data.link ? (
-										<a href={partner.data.link.url}>
+										<OutboundLink href={partner.data.link.url}>
 											<img src={partner.data.image.url} />
-										</a>
+										</OutboundLink>
 									) : (
 										<a href="#">
 											<img src={partner.data.image.url} />
