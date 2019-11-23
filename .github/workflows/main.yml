@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 10.x
       - run: npm install
+      - run: | 
+          git config --global github.user bedilbek
+          git config --global github.token ${{ secrets.GH_PAT }}
       - run: npm run deploy
         env: 
           PRISMIC_REPOSITORY_NAME: ${{ secrets.PRISMIC_REPOSITORY_NAME }}
