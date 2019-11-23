@@ -16,5 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      - env: 
+          PRISMIC_REPOSITORY_NAME: ${{ secrets.PRISMIC_REPOSITORY_NAME }}
+          PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
       - run: npm install
       - run: npm run deploy
