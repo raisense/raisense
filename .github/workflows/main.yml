@@ -10,11 +10,11 @@ jobs:
     name: pushing to github pages
     runs-on: [ubuntu-latest]
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
         with:
-          node-version: '10.x'
-      - name: npm install, deploy
-        run: |
-          npm install
-          npm run deploy
+          ref: develop
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: npm install
+      - run: npm run deploy
