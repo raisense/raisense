@@ -1,0 +1,20 @@
+name: Deploy to GH Pages on push to develop
+
+on:
+  push:
+    branches: 
+    - develop
+
+jobs:
+  push_gh_pages:
+    name: pushing to github pages
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: npm install, deploy
+        run: |
+          npm install
+          npm run deploy
