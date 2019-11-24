@@ -42,14 +42,14 @@ export default function Footer() {
 								<li>
 									<img src={phone} className="icon" />
 									<span>
-										<a href="tel:+99890 999 69 96">
-										+99890 999 69 96
+										<a href="tel:+998 97 256 56 54">
+										+998 97 256 56 54
 										</a>
 										</span>
 								</li>
 								<li>
 									<img src={location} className="icon" />
-									<span>1, Chust str., Tashkent city, 100070</span>
+									<span>1, Chust str., Mirzo Ulugbek dist., Tashkent, 100070</span>
 								</li>
 								<li>
 									<img src={email} className="icon" />
