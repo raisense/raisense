@@ -1,0 +1,28 @@
+name: Deploy to GH Pages on push to develop
+
+on:
+  push:
+    branches: 
+    - develop
+
+jobs:
+  push_gh_pages:
+    name: pushing to github pages
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: develop
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: npm install
+      - run: | 
+          git config --global github.user bedilbek
+          git config --global github.name "Bedilbek"
+          git config --global github.email "bedilbek@gmail.com"
+          git config --global github.token ${{ secrets.GH_PAT }}
+      - run: npm run deploy
+        env: 
+          PRISMIC_REPOSITORY_NAME: ${{ secrets.PRISMIC_REPOSITORY_NAME }}
+          PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
