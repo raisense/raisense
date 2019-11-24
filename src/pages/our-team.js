@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import facebook from '../images/icons/facebook.svg';
 import linkedin from '../images/icons/linkedin.svg';
 import github from '../images/icons/github-sign.svg';
+import {TimelineLite} from "gsap/all";
 
 export const query = graphql`
 	{
@@ -58,9 +59,23 @@ export const query = graphql`
 	}
 `;
 export default class OurTeam extends Component {
-	state = {
-		members: this.props.data.allPrismicMembers.nodes
-	};
+	constructor(props) {
+		super(props);
+
+		this.cards = [];
+		this.tl = new TimelineLite({paused: true, delay: 0.5});	
+
+		this.state = {
+			members: this.props.data.allPrismicMembers.nodes
+		};
+	}
+
+	
+
+	componentDidMount() {
+		this.tl.staggerFrom( this.cards, 0.5, {opacity: 0, autoAlpha: 2, y: 40 }, 0.1);
+		this.tl.play();
+	}
 
 	render() {
 		return (
@@ -69,11 +84,10 @@ export default class OurTeam extends Component {
 				<div className="team">
 					<h1>Our Team</h1>
 					<Row>
-						{this.state.members.map((member) => {
+						{this.state.members.map((member, index) => {
 							const fluidImages = member.data.avatar.localFile.childImageSharp;
-							console.log(fluidImages);
 							return (
-								<Col xs={12} sm={6} md={4} lg={3}>
+								<Col xs={12} sm={6} md={4} lg={3} key={index} ref={div => this.cards[index] = div}>
 									<div className="card">
 										<div className="card-img">
 											{fluidImages ? (
