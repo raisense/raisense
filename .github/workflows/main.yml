@@ -17,12 +17,14 @@ jobs:
         with:
           node-version: 10.x
       - run: npm install
-      - run: | 
-          git config --global github.user bedilbek
-          git config --global github.name "Bedilbek"
-          git config --global github.email "bedilbek@gmail.com"
-          git config --global github.token ${{ secrets.GH_PAT }}
-      - run: npm run deploy
+      - run: npm run build
         env: 
           PRISMIC_REPOSITORY_NAME: ${{ secrets.PRISMIC_REPOSITORY_NAME }}
           PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
+      - run: cp CNAME public/
+      - name: GitHub Pages Deploy
+        uses: maxheld83/ghpages@v0.2.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        env:
+          BUILD_DIR: public/
